@@ -30,7 +30,7 @@ class _MergeDemoPage extends State<MergeDemoPage> {
                   value: true,
                   onChanged: (bool? value) {},
                 ),
-                const Text('Accepter les CGV'),
+                const Text('checkbox sans merge'),
               ],
             ),
             MergeSemantics(
@@ -40,7 +40,7 @@ class _MergeDemoPage extends State<MergeDemoPage> {
                     value: true,
                     onChanged: (bool? value) {},
                   ),
-                  const Text('Accepter les CGV'),
+                  const Text('checkbox MergeSemantics'),
                 ],
               ),
             ),
@@ -52,7 +52,7 @@ class _MergeDemoPage extends State<MergeDemoPage> {
                     value: true,
                     onChanged: (bool? value) {},
                   ),
-                  const Text('Accepter les CGV'),
+                  const Text('checkbox container:true'),
                 ],
               ),
             )
