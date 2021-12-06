@@ -56,6 +56,17 @@ class MyHomePage extends StatelessWidget {
                     ));
               },
             ), */
+            ListTile(
+              title: const Text('Semantics'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SemanticsDemoPage(),
+                    ));
+              },
+            ),
             Semantics(
               button: true,
               child: ListTile(
@@ -71,17 +82,6 @@ class MyHomePage extends StatelessWidget {
                       ));
                 },
               ),
-            ),
-            ListTile(
-              title: const Text('Semantics'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SemanticsDemoPage(),
-                    ));
-              },
             ),
             ListTile(
               title: const Text('Missing Labels'),
