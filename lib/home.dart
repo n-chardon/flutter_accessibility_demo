@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_accessibility_demo/cases/bad_interaction.dart';
 import 'package:flutter_accessibility_demo/cases/contrast.dart';
 import 'package:flutter_accessibility_demo/cases/landscape.dart';
+import 'package:flutter_accessibility_demo/cases/merge_demos.dart';
 import 'package:flutter_accessibility_demo/cases/missing_labels.dart';
 import 'package:flutter_accessibility_demo/cases/no_state.dart';
+import 'package:flutter_accessibility_demo/cases/semantics.dart';
 import 'package:flutter_accessibility_demo/cases/text_size.dart';
 import 'package:flutter_accessibility_demo/cases/unrelated_texts.dart';
+import 'package:flutter_accessibility_demo/cases/headings.dart';
+import 'package:flutter_accessibility_demo/cases/fields_and_errors.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -17,7 +22,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
       body: const Center(
-        child: Text('Welcome in Accessibility App !'),
+        child: Text('Welcome to Semantics Demo App !'),
       ),
       drawer: Drawer(
         child: ListView(
@@ -29,7 +34,7 @@ class MyHomePage extends StatelessWidget {
               ),
               child: Text('Menu'),
             ),
-            ListTile(
+/*             ListTile(
               title: const Text('Text Size'),
               onTap: () {
                 Navigator.pop(context);
@@ -39,8 +44,8 @@ class MyHomePage extends StatelessWidget {
                       builder: (context) => const TextSizePage(),
                     ));
               },
-            ),
-            ListTile(
+            ), */
+/*             ListTile(
               title: const Text('Contrast'),
               onTap: () {
                 Navigator.pop(context);
@@ -48,6 +53,33 @@ class MyHomePage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const ContrastPage(),
+                    ));
+              },
+            ), */
+            Semantics(
+              button: true,
+              child: ListTile(
+                title: const Text('MergeSemantics'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MergeDemoPage(
+                          initialyChecked: false,
+                        ),
+                      ));
+                },
+              ),
+            ),
+            ListTile(
+              title: const Text('Semantics'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SemanticsDemoPage(),
                     ));
               },
             ),
@@ -105,6 +137,28 @@ class MyHomePage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const BadInteractionsPage(),
+                    ));
+              },
+            ),
+            ListTile(
+              title: const Text('Headings'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HeadingsUsagePage(),
+                    ));
+              },
+            ),
+            ListTile(
+              title: const Text('Form fields'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FormFieldsPage(),
                     ));
               },
             ),

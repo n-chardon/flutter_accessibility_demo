@@ -2,5 +2,9 @@
 .idea
 .dart_tool
 .packages
+.flutter-plugins
+.gitignore
+.flutter-plugins-dependencies
 build
 build/*
+.vscode
