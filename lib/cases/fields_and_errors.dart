@@ -20,6 +20,7 @@ class _FormFieldsPageState extends State<FormFieldsPage> {
             Container(
                 margin: EdgeInsets.all(20),
                 child: Semantics(
+                    // On relie le message d'erreur via le hint
                     hint: _validate ? 'Username Can\'t Be Empty' : null,
                     child: TextField(
                       controller: nameController,
