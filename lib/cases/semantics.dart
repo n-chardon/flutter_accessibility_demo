@@ -17,9 +17,44 @@ class SemanticsDemoPage extends StatelessWidget {
             ]),
             Row(children: [
               InkWell(
-                child: const Text("Je suis cliquable"),
-              ),
+                  child: Semantics(
+                checked: false, // Etat + sémantique de case à cocher
+                child: const Text("Je suis une case à cocher"),
+              )),
             ]),
+            Row(children: [
+              InkWell(
+                  child: Semantics(
+                toggled: false, // Etat + sémantique de case à cocher
+                child: const Text("Je suis un bouton à bascule"),
+              )),
+            ]),
+            Semantics(
+              container: true,
+              label: "Civilité",
+              child: Column(
+                children: [
+                  Row(children: [
+                    InkWell(
+                        child: Semantics(
+                      button: true,
+                      inMutuallyExclusiveGroup: true,
+                      checked: true,
+                      child: const Text("Monsieur"),
+                    )),
+                  ]),
+                  Row(children: [
+                    InkWell(
+                        child: Semantics(
+                      inMutuallyExclusiveGroup: true,
+                      button: true,
+                      checked: false, // Etat + sémantique de case à cocher
+                      child: const Text("Madame"),
+                    )),
+                  ]),
+                ],
+              ),
+            ),
           ],
         ));
   }
