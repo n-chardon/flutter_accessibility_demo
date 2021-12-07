@@ -25,16 +25,15 @@ class HeadingsUsagePage extends StatelessWidget {
         Row(children: [
           Semantics(
             header: true,
-            sortKey: OrdinalSortKey(2),
+            // le titre ci-dessous devra être annoncé comme entête. Fonctionne sur iOS
             child: const Text('Good title', style: TextStyle(fontSize: 30)),
           ),
         ]),
         Row(
           children: [
-            Semantics(
-                sortKey: OrdinalSortKey(1),
-                child: const ExcludeSemantics(child: Text("TER")),
-                label: "T.E.R.")
+            const Text(
+              "Lorem Elsass ipsum munster Miss Dahlias\n ornare nullam Yo dû.\n\n Oberschaeffolsheim mollis non Heineken\n réchime Pellentesque amet chambon turpis \n Racing. ",
+            ),
           ],
         ),
       ]),

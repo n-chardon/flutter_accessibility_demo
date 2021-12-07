@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_accessibility_demo/cases/bad_interaction.dart';
 import 'package:flutter_accessibility_demo/cases/contrast.dart';
+import 'package:flutter_accessibility_demo/cases/exclude_semantics.dart';
 import 'package:flutter_accessibility_demo/cases/landscape.dart';
 import 'package:flutter_accessibility_demo/cases/merge_demos.dart';
 import 'package:flutter_accessibility_demo/cases/missing_labels.dart';
@@ -83,6 +84,42 @@ class MyHomePage extends StatelessWidget {
                 },
               ),
             ),
+            Semantics(
+              button: true,
+              child: ListTile(
+                title: const Text('ExcludeSemantics'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ExcludeSemanticsDemoPage(),
+                      ));
+                },
+              ),
+            ),
+            ListTile(
+              title: const Text('Headings'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HeadingsUsagePage(),
+                    ));
+              },
+            ),
+            ListTile(
+              title: const Text('Form fields'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FormFieldsPage(),
+                    ));
+              },
+            ),
             ListTile(
               title: const Text('Missing Labels'),
               onTap: () {
@@ -137,28 +174,6 @@ class MyHomePage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const BadInteractionsPage(),
-                    ));
-              },
-            ),
-            ListTile(
-              title: const Text('Headings'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const HeadingsUsagePage(),
-                    ));
-              },
-            ),
-            ListTile(
-              title: const Text('Form fields'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const FormFieldsPage(),
                     ));
               },
             ),

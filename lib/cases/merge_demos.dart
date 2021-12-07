@@ -55,7 +55,20 @@ class _MergeDemoPage extends State<MergeDemoPage> {
                   const Text('checkbox container:true'),
                 ],
               ),
-            )
+            ),
+            Semantics(
+              container: true,
+              child: Row(
+                children: [
+                  Text.rich(TextSpan(
+                      text: "Texte en gras",
+                      style: TextStyle(fontWeight: FontWeight.bold))),
+                  Text.rich(TextSpan(
+                      text: "Texte en italique",
+                      style: TextStyle(fontStyle: FontStyle.italic)))
+                ],
+              ),
+            ),
           ],
         ));
   }

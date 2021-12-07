@@ -55,28 +55,6 @@ class SemanticsDemoPage extends StatelessWidget {
                 ],
               ),
             ),
-            Semantics(
-              excludeSemantics: true,
-              label: "Exclu de sémantique",
-              child: Row(
-                children: [
-                  Text("Je suis exclu de semantics"),
-                ],
-              ),
-            ),
-            Semantics(
-              //container: true,
-              child: Row(
-                children: [
-                  Text.rich(TextSpan(
-                      text: "Texte en gras",
-                      style: TextStyle(fontWeight: FontWeight.bold))),
-                  Text.rich(TextSpan(
-                      text: "Texte en italique",
-                      style: TextStyle(fontStyle: FontStyle.italic)))
-                ],
-              ),
-            ),
           ],
         ));
   }
